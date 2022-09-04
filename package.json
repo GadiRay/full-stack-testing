@@ -1,0 +1,33 @@
+{
+  "name": "full-stack-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn start\" \"yarn start:server\"",
+    "start": "yarn workspace my-app start",
+    "start:server": "yarn workspace my-server start",
+    "postinstall": "docker-compose up",
+    "test": "concurrently \"yarn test:app\" \"yarn test:server\"",
+    "test:app": "yarn workspace my-app test",
+    "test:server": "yarn workspace my-server test",
+    "start:db": "docker-compose up",
+    "test:e2e": "PORT=3000 start-server-and-test dev http://localhost:3000 cy:run",
+    "test:e2e:dev": "PORT=3000 start-server-and-test dev http://localhost:3000 cy:dev",
+    "cy:dev": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "cypress": "^10.6.0",
+    "start-server-and-test": "^1.14.0",
+    "typescript": "^4.7.4"
+  }
+}
