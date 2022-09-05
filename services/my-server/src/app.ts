@@ -39,7 +39,7 @@ const port = 3001;
 
 const usersService = new UsersService(pool);
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post(

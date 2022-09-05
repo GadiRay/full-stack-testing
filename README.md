@@ -5,24 +5,24 @@
 
 ### How to run all of the tests?
 ``` bash
-npm i
+yarn
 
-npm t
+yarn test
 ```
 ### How to run only frontend tests?
 
 ``` bash
-npm run test:app
+yarn test:app
 ```
 
 ### How to run only backend tests?
 
 ``` bash
-npm run test:server
+yarn test:server
 ```
 
 ### How to run only e2e tests?
 
 ``` bash
-npm run test:e2e
+yarn test:e2e
 ```
